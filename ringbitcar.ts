@@ -103,9 +103,9 @@ namespace RingbitCar {
     export function brake(): void {
         // Add code here
 
-        pins.digitalWritePin(DigitalPin.P0, 0)
-        pins.digitalWritePin(DigitalPin.P1, 0)
-        pins.digitalWritePin(DigitalPin.P2, 0)
+        pins.servoSetPulse(pin_left_wheel, 1500)
+        pins.servoSetPulse(pin_right_wheel, 1500)
+   
 
     }
 
@@ -139,20 +139,20 @@ namespace RingbitCar {
         // Add code here
 
         if (m > 0) {
-            pins.servoSetPulse(pin_left_wheel, 1500 + m * 5)
+            pins.servoSetPulse(pin_left_wheel, 1650 + m * 4)
         } else if (m < 0) {
-            pins.servoSetPulse(pin_left_wheel, 1500 + m * 5)
-        } else pins.digitalWritePin(DigitalPin.P1, 0)
+            pins.servoSetPulse(pin_left_wheel, 1350 + m * 4)
+        } else pins.servoSetPulse(pin_left_wheel, 1500)
 
 
         if (n > 0) {
-            pins.servoSetPulse(pin_right_wheel, 1500 + n * 5)
+            pins.servoSetPulse(pin_right_wheel, 1350 - n * 4)
         } else if (n < 0) {
-            pins.servoSetPulse(pin_right_wheel, 1500 + n * 5)
-        } else pins.digitalWritePin(DigitalPin.P2, 0)
+            pins.servoSetPulse(pin_right_wheel, 1650 - n * 4)
+        } else pins.servoSetPulse(pin_right_wheel, 1500)
 
     }
 
 
 }
- 
+
