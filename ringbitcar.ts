@@ -46,7 +46,6 @@ namespace RingbitCar {
         pins.servoSetPulse(pin_left_wheel, 2000)
         pins.servoSetPulse(pin_right_wheel, 1000)
 
-
     }
 
 
@@ -77,7 +76,6 @@ namespace RingbitCar {
         pins.servoSetPulse(pin_left_wheel, 1000)
         pins.servoSetPulse(pin_right_wheel, 1000)
 
-
     }
 
 
@@ -105,7 +103,6 @@ namespace RingbitCar {
 
         pins.servoSetPulse(pin_left_wheel, 1500)
         pins.servoSetPulse(pin_right_wheel, 1500)
-   
 
     }
 
