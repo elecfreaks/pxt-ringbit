@@ -4,6 +4,25 @@
  */
 
 
+enum lineFollowDirType {
+    //% block="left" enumval=0
+    line_Follow_Left,
+
+    //% block="right" enumval=1
+    line_Follow_Right,
+}
+
+
+enum lineFollowStateType {
+    //% block="black" enumval=0
+    line_Follow_Black,
+
+    //% block="white" enumval=1
+    line_Follow_White,
+}
+
+
+
 /**
  * Custom blocks
  */
@@ -102,9 +121,9 @@ namespace RingbitCar {
         pins.digitalWritePin(<number>pin_right_wheel, 0)
 
     }
-    
-    
-    
+
+
+
     /**
     * TODO: describe your function here
     * @param m the m from -100 (min) to 100 (max), eg:0
@@ -138,14 +157,33 @@ namespace RingbitCar {
     */
     //% weight=10
     //% advanced=true
-    //% blockId=ringbitcar_line_follow block="line follow"
-    export function line_follow(): void {
-        // Add code here
+    //% blockId=ringbitcar_line_follow block="line follow %dir | is %state"
+    export function line_follow(dir: lineFollowDirType, state: lineFollowStateType): boolean {
+        let a = pins.analogReadPin(AnalogPin.P0)
+
+        if (dir == 0 && state == 0){
+            if (a < 200) {
+                return true
+            } else return false
+        } else if (dir == 0 && state == 1){
+            if (a > 200) {
+                return true
+            } else return false
+        } else if (dir == 1 && state == 0) {
+            if (a > 200 && a <300 || a < 100) {
+                return true
+            } else return false
+        } else if (dir == 1 && state == 1) {
+            if (a > 100 && a < 200 || a < 300) {
+                return true
+            } else return false
+        } else return false
+            
 
     }
 
 
-    
+
 
 
 }
