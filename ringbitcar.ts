@@ -98,9 +98,37 @@ namespace RingbitCar {
 
         //pins.servoSetPulse(pin_left_wheel, 1500)
         //pins.servoSetPulse(pin_right_wheel, 1500)
-
         pins.digitalWritePin(<number>pin_left_wheel, 0)
         pins.digitalWritePin(<number>pin_right_wheel, 0)
+
+    }
+    
+    
+    
+    /**
+    * TODO: describe your function here
+    * @param m the m from -100 (min) to 100 (max), eg:0
+    * @param n the n from -100 (min) to 100 (max), eg:0
+    */
+    //% weight=4
+    //% blockId=ringbitcar_freestyle block="left wheel speed %m| right wheel speed %n"
+    //% m.min=-100 m.max=100
+    //% n.min=-100 n.max=100
+    export function freestyle(m: number, n: number): void {
+        // Add code here
+
+        if (m > 0) {
+            pins.servoSetPulse(pin_left_wheel, 1600 + m * 8)
+        } else if (m < 0) {
+            pins.servoSetPulse(pin_left_wheel, 1400 + m * 8)
+        } else pins.servoSetPulse(pin_left_wheel, 1500)
+
+
+        if (n > 0) {
+            pins.servoSetPulse(pin_right_wheel, 1400 - n * 8)
+        } else if (n < 0) {
+            pins.servoSetPulse(pin_right_wheel, 1600 - n * 8)
+        } else pins.servoSetPulse(pin_right_wheel, 1500)
 
     }
 
@@ -114,38 +142,10 @@ namespace RingbitCar {
     export function line_follow(): void {
         // Add code here
 
-
-
     }
 
 
-    /**
-    * TODO: describe your function here
-    * @param m the m from -100 (min) to 100 (max), eg:0
-    * @param n the n from -100 (min) to 100 (max), eg:0
-    */
-    //% weight=9
-    //% advanced=true
-    //% blockId=ringbitcar_freestyle block="left wheel speed %m| right wheel speed %n"
-    //% m.min=-100 m.max=100
-    //% n.min=-100 n.max=100
-    export function freestyle(m: number, n: number): void {
-        // Add code here
-
-        if (m > 0) {
-            pins.servoSetPulse(pin_left_wheel, 1650 + m * 8)
-        } else if (m < 0) {
-            pins.servoSetPulse(pin_left_wheel, 1350 + m * 8)
-        } else pins.servoSetPulse(pin_left_wheel, 1500)
-
-
-        if (n > 0) {
-            pins.servoSetPulse(pin_right_wheel, 1350 - n * 8)
-        } else if (n < 0) {
-            pins.servoSetPulse(pin_right_wheel, 1650 - n * 8)
-        } else pins.servoSetPulse(pin_right_wheel, 1500)
-
-    }
+    
 
 
 }
