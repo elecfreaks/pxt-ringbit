@@ -62,7 +62,7 @@ namespace RingbitCar {
     * TODO: full speed move forward
     */
     //% weight=9
-    //% blockId=ringbitcar_forward block="full ahead"
+    //% blockId=ringbitcar_forward block="go straight at full speed"
     export function forward(): void {
         // Add code here
 
@@ -77,7 +77,7 @@ namespace RingbitCar {
     * TODO: full speed move back
     */
     //% weight=8
-    //% blockId=ringbitcar_back block="full astern"
+    //% blockId=ringbitcar_back block="reverse at full speed"
     export function back(): void {
         // Add code here
 
