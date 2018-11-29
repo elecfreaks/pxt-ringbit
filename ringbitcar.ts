@@ -62,7 +62,7 @@ namespace RingbitCar {
     * TODO: full speed move forward
     */
     //% weight=9
-    //% blockId=ringbitcar_forward block="move forward"
+    //% blockId=ringbitcar_forward block="full ahead"
     export function forward(): void {
         // Add code here
 
@@ -77,7 +77,7 @@ namespace RingbitCar {
     * TODO: full speed move back
     */
     //% weight=8
-    //% blockId=ringbitcar_back block="move back"
+    //% blockId=ringbitcar_back block="full astern"
     export function back(): void {
         // Add code here
 
@@ -92,7 +92,7 @@ namespace RingbitCar {
     * TODO: full speed turn left
     */
     //% weight=7
-    //% blockId=ringbitcar_left block="turn left"
+    //% blockId=ringbitcar_left block="turn left at full speed"
     export function turnleft(): void {
         // Add code here
 
@@ -106,7 +106,7 @@ namespace RingbitCar {
     * TODO: full speed turn right
     */
     //% weight=6
-    //% blockId=ringbitcar_right block="turn right"
+    //% blockId=ringbitcar_right block="turn right at full speed"
     export function turnright(): void {
         // Add code here
 
@@ -163,7 +163,7 @@ namespace RingbitCar {
 
 
     /**
-    * TODO: line follow
+    * TODO: line following
     */
     //% weight=10
     //% advanced=true
