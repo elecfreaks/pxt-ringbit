@@ -4,21 +4,18 @@
  */
 
 
-enum lineFollowDirType {
-    //% block="left" enumval=0
-    line_Follow_Left,
+enum TrackingStateType {
+    //% block="● ●" enumval=0
+    Tracking_State_0,
 
-    //% block="right" enumval=1
-    line_Follow_Right,
-}
+    //% block="● ◌" enumval=1
+    Tracking_State_1,
 
+    //% block="◌ ●" enumval=2
+    Tracking_State_2,
 
-enum lineFollowStateType {
-    //% block="black" enumval=0
-    line_Follow_Black,
-
-    //% block="white" enumval=1
-    line_Follow_White,
+    //% block="◌ ◌" enumval=3
+    Tracking_State_3,
 }
 
 
@@ -152,33 +149,39 @@ namespace RingbitCar {
     }
 
 
+
     /**
     * TODO: describe your function here
     */
     //% weight=10
     //% advanced=true
-    //% blockId=ringbitcar_line_follow block="line follow %dir | is %state"
-    export function line_follow(dir: lineFollowDirType, state: lineFollowStateType): boolean {
-        let a = pins.analogReadPin(AnalogPin.P0)
+    //% blockId=tracking block="tracking state is %state"
+    export function line_follow_2(state: TrackingStateType): boolean {
+        let sensor_pin = AnalogPin.P0
+        
+        if (pin_left_wheel != AnalogPin.P1 && pin_right_wheel != AnalogPin.P1) {
+            sensor_pin = AnalogPin.P1
+        } else if (pin_left_wheel != AnalogPin.P2 && pin_right_wheel != AnalogPin.P2) {
+            sensor_pin = AnalogPin.P2
+        }
 
-        if (dir == 0 && state == 0){
-            if (a < 200) {
-                return true
-            } else return false
-        } else if (dir == 0 && state == 1){
-            if (a > 200) {
-                return true
-            } else return false
-        } else if (dir == 1 && state == 0) {
-            if (a > 200 && a <300 || a < 100) {
-                return true
-            } else return false
-        } else if (dir == 1 && state == 1) {
-            if (a > 100 && a < 200 || a < 300) {
-                return true
-            } else return false
-        } else return false
-            
+        let i = pins.analogReadPin(sensor_pin)
+
+        if (i < 100 && state == 0) {
+            basic.showNumber(0)
+            return true;
+        } else if (i < 200 && state == 1) {
+            basic.showNumber(1)
+            return true;
+        } else if (i < 300 && state == 2) {
+            basic.showNumber(2)
+            return true;
+        } else if (i < 400 && state == 3) {
+            basic.showNumber(3)
+            return true;
+        } else return false;
+
+
 
     }
 
