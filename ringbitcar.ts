@@ -139,7 +139,7 @@ namespace RingbitCar {
     * @param n the n from -100 (min) to 100 (max), eg:0
     */
     //% weight=4
-    //% blockId=ringbitcar_freestyle block="left wheel speed %m| right wheel speed %n"
+    //% blockId=ringbitcar_freestyle block="set left wheel speed %m| right wheel speed %n"
     //% m.min=-100 m.max=100
     //% n.min=-100 n.max=100
     export function freestyle(m: number, n: number): void {
