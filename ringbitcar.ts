@@ -4,7 +4,7 @@
  */
 
 
-//% weight=0 color=#0fbc11  icon="\uf207" block="ringbitcar"
+//% weight=0 color=#0fbc11  icon="\uf207" block="ringbit车"
 namespace ringbitcar {
     
     export enum TrackingStateType {
