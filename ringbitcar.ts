@@ -4,10 +4,7 @@
  */
 
 
-/**
- * Custom blocks
- */
-//% color=#0fbc11 weight=10 icon="\uf207"
+//% weight=0 color=#0fbc11  icon="\uf207" block="ringbitcar"
 namespace ringbitcar {
     
     export enum TrackingStateType {
