@@ -16,5 +16,5 @@
         "tests.ts"
     ],
     "public": true,
-    "installedVersion": "github:elecfreaks/pxt-ringbitcar#v0.0.10"
+    "installedVersion": "github:elecfreaks/pxt-ringbitcar-old#v0.0.10"
 }
