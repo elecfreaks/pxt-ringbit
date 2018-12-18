@@ -9,7 +9,8 @@
     },
     "files": [
         "README.md",
-        "ringbitcar.ts"
+        "ringbitcar.ts",
+        "_locales/zh/ringbitcar-strings.json"
     ],
     "testFiles": [
         "tests.ts"
